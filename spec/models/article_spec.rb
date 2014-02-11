@@ -10,6 +10,8 @@ describe Article do
 		expect(Article.create(title: 'Google', description: 'Hey yo its your boy da article')).to_not be_valid
 	end
 
-
+	describe 'associations' do
+		it { should have_many :comments }
+	end
 
 end

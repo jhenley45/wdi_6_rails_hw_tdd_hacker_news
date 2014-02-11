@@ -14,4 +14,7 @@ describe User do
 		it { should have_many :articles }
 	end
 
+	describe 'associations' do
+		it { should have_many :comments }
+	end
 end
