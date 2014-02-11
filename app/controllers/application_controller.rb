@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!
+
+  require 'action_view'
+
+  include ActionView::Helpers::DateHelper
 end

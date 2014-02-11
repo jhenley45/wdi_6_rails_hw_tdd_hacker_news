@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
-gem 'rails_12factor'
+
 gem 'pg'
 gem 'dotenv-rails'
 gem 'sass-rails', '~> 4.0.0'
@@ -33,6 +33,7 @@ end
 
 # Other gems you may find useful for development
 group :development do
+  gem 'rails_12factor'
   gem 'time_difference'
   gem 'better_errors'
   gem 'binding_of_caller'
