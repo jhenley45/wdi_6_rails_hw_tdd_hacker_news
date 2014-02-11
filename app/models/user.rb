@@ -7,5 +7,5 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :username, presence: true
 
-  #has many :articles
+  has_many :articles
 end
