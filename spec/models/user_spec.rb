@@ -6,4 +6,8 @@ describe User do
 		expect(User.create(username: 'jhenley45', about: 'Hey yo its your boy')).to_not be_valid
 	end
 
+	it 'is invalid without a username' do
+		expect(User.create(email: 'jack@aol.com', about: 'Hey yo its your boy')).to_not be_valid
+	end
+
 end
