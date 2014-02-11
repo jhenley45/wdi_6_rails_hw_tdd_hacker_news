@@ -1,6 +1,6 @@
 <h1>All Articles</h1>
 <ul>
 <% @articles.each do | article | %>
-	<li><%= article.title %></li>
+	<li><%= article.title %> (<%= article.url.gsub("http://", "").split("/")[0] %>)</li>
 <% end %>
 </ul>
