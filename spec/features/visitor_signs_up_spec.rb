@@ -15,4 +15,10 @@ feature 'Visitor signs up' do
 		expect(page).to have_content 'Signed in as jack@example.com'
 		expect(page).to have_link 'Sign Out'
 	end
+
+	scenario 'unsuccessfully with blank fields' do
+		click_button 'Sign up'
+		expect(page).to_not have_content 'Signed in'
+		expect(page).to have_content "can't be blank"
+	end
 end
