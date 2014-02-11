@@ -1,10 +1,16 @@
 HackerNews::Application.routes.draw do
 
-  get "users/index"
-  get "users/show"
-  get "users/new"
-  get "users/create"
+  # get "users/index"
+  # get "users/show"
+  # get "users/new"
+  # get "users/create"
   devise_for :users
-  root to: 'users#index'
+  root to: 'articles#index'
+
+  resources :users
+  resources :articles do
+    resources :comments
+  end
+
 
  end

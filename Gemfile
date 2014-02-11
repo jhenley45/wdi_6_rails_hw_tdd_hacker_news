@@ -9,6 +9,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'devise'
+gem 'factory_girl_rails'
 
 # These are gems you may find useful for testing
 # I have NOT created configuration in the /spec directory for you
