@@ -14,4 +14,8 @@ describe Article do
 		it { should have_many :comments }
 	end
 
+	describe 'associations' do
+		it { should belong_to :user }
+	end
+
 end
