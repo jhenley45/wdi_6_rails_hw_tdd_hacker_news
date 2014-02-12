@@ -1,6 +1,9 @@
 <h1>All Articles</h1>
-<ul>
+<%= link_to 'Submit', new_article_path %>
+<ol>
 <% @articles.each do | article | %>
-	<li><%= article.title %> (<%= article.url.gsub("http://", "").split("/")[0] %>)</li>
+	<li><a href="<%= article.url %>"><%= article.title %></a> (<%= article.url.gsub("http://", "").split("/")[0] %>)
+	<%= link_to 'comment', [article, :comments] %>
+	</li>
 <% end %>
-</ul>
+</ol>

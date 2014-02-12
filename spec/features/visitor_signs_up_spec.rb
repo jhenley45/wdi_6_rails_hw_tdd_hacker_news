@@ -7,7 +7,6 @@ feature 'Visitor signs up' do
 	end
 
 	scenario 'successfully' do
-
 		fill_in 'Email', with: 'jack@example.com'
 		fill_in 'Password', with: 'password'
 		fill_in 'Password confirmation', with: 'password'

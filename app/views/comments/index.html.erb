@@ -1,0 +1,11 @@
+<h1><%= @article.title %></h1>
+
+<%= form_for [@article, @comment] do |f| %>
+	<%= f.label :content %>
+	<%= f.text_field :content %><br>
+	<%= f.submit value="Submit Comment" %>
+<% end %>
+
+<% @comments.each do |comment| %>
+	<%= comment.content %>
+<% end %>
