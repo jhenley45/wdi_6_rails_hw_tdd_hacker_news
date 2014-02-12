@@ -11,17 +11,17 @@ class VotesController < ApplicationController
 		  		# no true vote. Make one
 		  		@vote = @votable.votes.create!(direction: true, user_id: @article.user_id)
 		  		flash['alert'] = "Upvote successful"
-		  		redirect_to articles_path
+		  		redirect_to :back
 	  		else
 	  			# already had a true vote
-	  			flash['alert'] = "You have already upvoted that article"
-	  			redirect_to articles_path
+	  			flash['alert'] = "You have already upvoted this"
+	  			redirect_to :back
 	  		end
 	  	else
 	  		# False vote exists already. Update "false" vote to "true"
 	  		Vote.change_vote_to_true(@votable)
 	  		flash['alert'] = "You switched your vote to true"
-	  		redirect_to articles_path
+	  		redirect_to :back
 	  	end
   	elsif params[:direction] == "false"
   		#Check to see if there's already a "true" vote for this votable
@@ -30,16 +30,16 @@ class VotesController < ApplicationController
 	  		if !Vote.find_downvoted_votable(@votable)
 	  			@vote = @votable.votes.create!(direction: false, user_id: @article.user_id)
 	  			flash['alert'] = "Downvote successful"
-	  			redirect_to articles_path
+	  			redirect_to :back
 	  		else
-	  			flash['alert'] = "You have already downvoted that article"
-	  			redirect_to articles_path
+	  			flash['alert'] = "You have already downvoted this"
+	  			redirect_to :back
 	  		end
 	  	else
 	  		# False vote exists already. Update "false" vote to "true"
 	  		Vote.change_vote_to_false(@votable)
 	  		flash['alert'] = "You switched your vote to false"
-	  		redirect_to articles_path
+	  		redirect_to :back
 	  	end
   	else
   		#something went wrong
