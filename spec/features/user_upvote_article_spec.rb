@@ -21,6 +21,6 @@ feature 'Users can upvote articles' do
 		click_link 'upvote'
 		expect(page).to have_content 'Upvote successful'
 		click_link 'upvote'
-		expect(page).to have_content 'You have already upvoted that article'
+		expect(page).to have_content 'You have already upvoted this'
 	end
 end

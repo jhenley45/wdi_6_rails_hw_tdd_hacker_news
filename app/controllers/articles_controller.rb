@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   def index
-  	@articles = Article.order(created_at: :desc)
+    #@articles = Article.includes(:votes).order("votes.true.count")
+    @articles = Article.all.sort { |x,y| x.votes.count <=> y.votes.count }
+  	#@articles = Article.order(created_at: :desc)
     @vote = Vote.new
   end
 
@@ -13,14 +15,12 @@ class ArticlesController < ApplicationController
   end
 
   def create
-  	article = Article.create(article_params)
-  	if !(params.has_key?(:name) && params.has_key?(:title))
-  		flash['alert'] = "Please try again."
-  		redirect_to articles_path
-  	elsif article.save
-  		redirect_to articles_path
+  	if (article_params[:url].empty? or article_params[:title].empty?)
+     	flash['alert'] = "Please try again."
+  	 	redirect_to articles_path
   	else
-  		redirect_to root_path
+      article = Article.create!(article_params)
+  		redirect_to articles_path
   	end
   end
 
