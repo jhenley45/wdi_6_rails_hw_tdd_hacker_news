@@ -3,13 +3,16 @@ class VotesController < ApplicationController
 
   def create
   	if params[:direction] = true
-  		#@comment = @commentable.comments.new(comment_params)
-  		@article = Article.find(params[:article_id])
-  		@vote = @votable.votes.create!(direction: true)
-  		#@article.votes << Vote.create!()
-
-  		flash['alert'] = "Upvote successful"
-  		redirect_to articles_path
+  		if !Vote.find_upvoted_votable(@votable)
+	  		#@comment = @commentable.comments.new(comment_params)
+	  		@article = Article.find(params[:article_id])
+	  		@vote = @votable.votes.create!(direction: true, user_id: @article.user_id)
+	  		flash['alert'] = "Upvote successful"
+	  		redirect_to articles_path
+  		else
+  			flash['alert'] = "You have already upvoted that article"
+  			redirect_to articles_path
+  		end
   	elsif params[:direction] = false
 
   	else
