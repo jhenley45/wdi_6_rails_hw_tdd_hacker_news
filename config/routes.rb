@@ -1,5 +1,6 @@
 HackerNews::Application.routes.draw do
 
+  # get "votes/create"
   # get "users/index"
   # get "users/show"
   # get "users/new"
@@ -8,7 +9,10 @@ HackerNews::Application.routes.draw do
   root to: 'articles#index'
 
   resources :articles do
-    resources :comments
+    resources :votes, defaults: {votable: 'article'}
+    resources :comments do
+      resources :votes, defaults: {votable: 'comment'}
+    end
   end
 
 

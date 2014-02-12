@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   def index
   	@articles = Article.order(created_at: :desc)
+    @vote = Vote.new
   end
 
   def show

@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 	before_action :get_article
 
+
   def index
   	@comment = Comment.new
   	@comments = @article.comments
@@ -21,14 +22,6 @@ class CommentsController < ApplicationController
   	else
   		redirect_to root_path
   	end
-  	# if !(params.has_key?(:content))
-  	# 	flash['alert'] = "Please try again."
-  	# 	redirect_to comments_path
-  	# elsif comment.save
-  	# 	redirect_to articles_path
-  	# else
-  	# 	redirect_to root_path
-  	# end
   end
 
   private

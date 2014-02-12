@@ -3,7 +3,8 @@
 <ol>
 <% @articles.each do | article | %>
 	<li><a href="<%= article.url %>"><%= article.title %></a> (<%= article.url.gsub("http://", "").split("/")[0] %>)
-	<%= link_to 'comment', [article, :comments] %>
+	<%= link_to 'comment', [article, :comments] %> | <%=link_to 'upvote', article_votes_path(article, vote: @vote, direction: true), method: :post %><br>
+	Upvotes: <%= article.votes.where(direction: true).count %>
 	</li>
 <% end %>
 </ol>
