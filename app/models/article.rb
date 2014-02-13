@@ -5,4 +5,8 @@ class Article < ActiveRecord::Base
 
   validates :title, presence: true
   validates :url, presence: true
+
+  def find_article_points(article)
+  	article.votes.where(direction: true).count - article.votes.where(direction: false).count
+  end
 end

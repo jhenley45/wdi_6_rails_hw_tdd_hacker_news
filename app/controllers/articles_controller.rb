@@ -1,8 +1,11 @@
 class ArticlesController < ApplicationController
   def index
     #@articles = Article.includes(:votes).order("votes.true.count")
-    @articles = Article.all.sort! { |x,y| x.votes.count <=> y.votes.count }
-  	#@articles = Article.order(created_at: :desc)
+    #@articles = Article.all.sort! { |x,y| x.votes.count <=> y.votes.count }
+    @articles = Article.all
+    @articles.sort_by! { |article| (article.votes.where(direction: true).count - article.votes.where(direction: false).count) }.reverse!
+  	#binding.pry
+    #@articles = Article.order(created_at: :desc)
     @vote = Vote.new
   end
 
