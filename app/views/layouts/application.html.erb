@@ -10,7 +10,7 @@
 <div class="site_container">
 <div class="site_header">
 	<div class="header_content">
-		<h1>Jacker News</h1>
+		<h1><%= link_to 'Jacker News', root_path %></h1> |
 			<%= link_to 'Submit', new_article_path %>
 			<div class="login_info">
 				<% if user_signed_in? %>
