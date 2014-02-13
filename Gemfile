@@ -18,7 +18,6 @@ gem 'rails_12factor', group: :production
 group :test do
   gem 'capybara'
   gem 'launchy'
-  gem 'faker'
   gem 'chronic'
 end
 
