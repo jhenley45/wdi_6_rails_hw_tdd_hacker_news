@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'factory_girl_rails'
+gem 'rails_12factor', group: :production
 
 # These are gems you may find useful for testing
 # I have NOT created configuration in the /spec directory for you
@@ -33,7 +34,6 @@ end
 
 # Other gems you may find useful for development
 group :development do
-  gem 'rails_12factor'
   gem 'time_difference'
   gem 'better_errors'
   gem 'binding_of_caller'
