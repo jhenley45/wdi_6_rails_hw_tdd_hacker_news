@@ -5,7 +5,6 @@ class CommentsController < ApplicationController
   def index
   	@comment = Comment.new
   	@comments = @article.comments.all
-    binding.pry
     @comments.sort_by! { |article| (article.votes.where(direction: true).count - article.votes.where(direction: false).count) }.reverse!
   	@vote = Vote.new
   end
