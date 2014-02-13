@@ -42,7 +42,7 @@ class VotesController < ApplicationController
 	  		redirect_to :back
 	  	end
   	else
-  		#something went wrong
+  		# something went terribly wrong
   	end
   end
 

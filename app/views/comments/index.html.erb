@@ -1,18 +1,30 @@
+<div class="comments_container">
 <h1><%= @article.title %></h1>
 
 <%= form_for [@article, @comment] do |f| %>
-	<%= f.label :content %>
-	<%= f.text_area :content %><br>
+
+	<%= f.text_area :content, :size => "70x7" %><br>
 	<%= f.submit value="Submit Comment" %>
 <% end %>
 
-<ol>
+<div class="comments">
 <% @comments.each do |comment| %>
-	<li><b>Author: <%= comment.user.email %></b> <br>Comment: <%= comment.content %> |
-		<%=link_to 'upvote', article_comment_votes_path(@article, comment, vote: @vote, direction: true), method: :post %> |
-		<%=link_to 'downvote', article_comment_votes_path(@article, comment, vote: @vote, direction: false), method: :post %><br>
-		Upvotes: <%= comment.votes.where(direction: true).count %> | Downvotes: <%= comment.votes.where(direction: false).count %>
-	</li>
+<div class="comment">
+		<div class="comment_head">
+			<%= comment.user.email %> |
+			<%=link_to 'upvote', article_comment_votes_path(@article, comment, vote: @vote, direction: true), method: :post %> |
+			<%=link_to 'downvote', article_comment_votes_path(@article, comment, vote: @vote, direction: false), method: :post %>
+		</div>
+		<div class="comment_content">
+			<%= comment.content %>
+		</div>
+		<div class="points">
+			<%= find_comment_points(comment) %> points
+		</div>
+
 <% end %>
-</ol>
+</div>
+<br><br>
 <%= link_to 'Back to Articles', articles_path %>
+</div>
+</div>
