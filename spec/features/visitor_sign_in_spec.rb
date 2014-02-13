@@ -11,7 +11,7 @@ feature 'Visitor signs in' do
 		fill_in 'Password', with: @user.password
 		click_button 'Sign in'
 
-		expect(page).to have_content "Signed in as #{@user.email}"
+		expect(page).to have_content "#{@user.email}"
 		expect(page).to have_link 'Sign Out'
 	end
 

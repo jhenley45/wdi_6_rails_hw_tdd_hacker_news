@@ -11,7 +11,7 @@ feature 'User can add comments to an article ' do
 	end
 
 	scenario 'successfully' do
-		fill_in 'Content', with: 'This is a comment about Google.'
+		fill_in 'Comment', with: 'This is a comment about Google.'
 		click_button 'Submit Comment'
 		expect(page).to have_content 'This is a comment about Google.'
 	end

@@ -12,7 +12,7 @@ feature 'User view all articles' do
 	end
 
 	scenario 'sorted by most recent' do
-		expect(page).to have_content 'Hacker News'
+		expect(page).to have_content 'Jacker News'
 		expect(page).to have_content 'Google'
 		expect(page).to have_content 'Yahoo'
 		expect(page).to have_content 'Reddit'

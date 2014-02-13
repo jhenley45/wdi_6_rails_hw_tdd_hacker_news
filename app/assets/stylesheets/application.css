@@ -79,10 +79,12 @@ ul {
 }
 .comment {
 	margin-top: 20px;
+	width: 100%;
 }
 .comment_content {
 	padding-left: 10px;
 	margin: 5px 5px;
+	width: 100%;
 }
 .arrow {
 	width: 10px;

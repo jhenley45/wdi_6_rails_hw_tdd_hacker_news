@@ -11,7 +11,7 @@ feature 'Visitor signs up' do
 		fill_in 'Password', with: 'password'
 		fill_in 'Password confirmation', with: 'password'
 		click_button 'Sign up'
-		expect(page).to have_content 'Signed in as jack@example.com'
+		expect(page).to have_content 'jack@example.com'
 		expect(page).to have_link 'Sign Out'
 	end
 

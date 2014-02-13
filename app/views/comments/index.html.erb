@@ -2,7 +2,7 @@
 <h1><%= @article.title %></h1>
 
 <%= form_for [@article, @comment] do |f| %>
-
+	<%= f.label :content, 'Comment' %>
 	<%= f.text_area :content, :size => "70x7" %><br>
 	<%= f.submit value="Submit Comment" %>
 <% end %>
