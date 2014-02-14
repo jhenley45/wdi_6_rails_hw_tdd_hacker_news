@@ -11,7 +11,8 @@ feature 'User view all articles' do
 		sign_in_as(user)
 	end
 
-	# scenario 'sorted by most recent' do
+	# scenario 'sorted by upvotes' do
+	# 	visit articles_path
 	# 	expect(page).to have_content 'Jacker News'
 	# 	expect(page).to have_content 'Google'
 	# 	expect(page).to have_content 'Yahoo'
