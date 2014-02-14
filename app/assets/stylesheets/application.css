@@ -99,5 +99,13 @@ ul {
 	font-size: 8pt;
 	color: #828282;
 }
-
+.user_info {
+	width: 96%;
+	margin: 10px auto;
+	font-family: Verdana;
+font-size: 10pt;
+color: #828282;
+padding-bottom: 20px;
+line-height: 25px;
+}
 

@@ -6,7 +6,7 @@
 	| <%=link_to 'upvote', article_votes_path(article, vote: @vote, direction: true), method: :post %> |
 	<%=link_to 'downvote', article_votes_path(article, vote: @vote, direction: false), method: :post %><br>
 	<div class="article_subcontent">
-	<%= find_article_points(article) %> points by <%= article.user.email %> | <%= article.comments.count %> <%= link_to 'comments', [article, :comments] %>
+	<%= find_article_points(article) %> points by <%= link_to "#{article.user.email}", user_path(article.user) %></a> | <%= article.comments.count %> <%= link_to 'comments', [article, :comments] %>
 	</div>
 	</li>
 <% end %>
