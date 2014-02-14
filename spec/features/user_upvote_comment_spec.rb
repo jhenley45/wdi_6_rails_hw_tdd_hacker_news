@@ -19,4 +19,11 @@ feature 'Users can upvote article comments' do
 		expect(page).to have_content '1 points'
 	end
 
+	scenario 'unsuccessfully' do
+		click_link 'upvote'
+		expect(page).to have_content '1 points'
+		click_link 'upvote'
+		expect(page).to have_content '1 points'
+	end
+
 end
