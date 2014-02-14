@@ -11,7 +11,7 @@ feature 'Users can downvote articles' do
 	scenario 'successfully' do
 		visit articles_path
 		click_link 'downvote'
-		expect(page).to have_content 'Downvote successful'
+		expect(page).to have_content '-1 points'
 	end
 
 end

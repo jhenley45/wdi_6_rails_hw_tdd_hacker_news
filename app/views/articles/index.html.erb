@@ -2,7 +2,7 @@
 <% @articles.each do | article | %>
 	<li>
 
-	<a href="<%= article.url %>"><%= article.title %></a> (<%= article.url.gsub("http://", "").split("/")[0] %>)
+	<a href="http://<%= article.url %>", target="blank"><%= article.title %></a> (<%= article.url.gsub("http://", "").split("/")[0] %>)
 	| <%=link_to 'upvote', article_votes_path(article, vote: @vote, direction: true), method: :post %> |
 	<%=link_to 'downvote', article_votes_path(article, vote: @vote, direction: false), method: :post %><br>
 	<div class="article_subcontent">

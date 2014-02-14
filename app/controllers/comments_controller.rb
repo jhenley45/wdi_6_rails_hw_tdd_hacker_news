@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
 
   def index
   	@comment = Comment.new
-  	@comments = @article.comments.includes(:user).all
+  	@comments = @article.comments.includes(:user)
     @comments.sort_by! { |article| (article.votes.where(direction: true).count - article.votes.where(direction: false).count) }.reverse!
   	@vote = Vote.new
   end
