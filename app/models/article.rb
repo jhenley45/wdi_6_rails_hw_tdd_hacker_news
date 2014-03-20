@@ -9,4 +9,8 @@ class Article < ActiveRecord::Base
   def find_article_points(article)
   	article.votes.where(direction: true).count - article.votes.where(direction: false).count
   end
+
+  def get_user_email
+  	self.user.email
+  end
 end
